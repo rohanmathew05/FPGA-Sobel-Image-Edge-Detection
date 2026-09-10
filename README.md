@@ -1,11 +1,11 @@
 # FPGA Sobel Edge Detector
 
-A streaming [Sobel edge-detection](https://en.wikipedia.org/wiki/Sobel_operator) detector written in
-SystemVerilog.
+A streaming Sobel edge-detection written in SystemVerilog, verified bit-accurate against a Python reference model.
 
-The design takes in an image one pixel per clock and processes it using a 3x3 sliding window. Instead of storing the whole image (which would be impractical in hardware), we use two line buffers to keep the previous two rows, and overwrite it as we move further down the image. 
+[Sobel edge-detection](https://en.wikipedia.org/wiki/Sobel_operator) is an image-processing technique that highlights the edges in an image by measuring how sharply brightness changes between neighboring pixels which is what turns a photo into the white-line outline you see in the demo below.
 
-I also built a small Python model to generate the input data and provide a software reference implementation.
+The design takes in an image one pixel per clock and processes it using a 3x3 sliding window. Instead of storing the whole image (which would be impractical in hardware), we use two line buffers to keep the previous two rows, and overwrite them as we move further down the image. 
+
 
 ## Demo
 
@@ -135,9 +135,9 @@ The input interface accepts 1 pixel per clock, giving a theoretical input rate o
 
 ## Python reference vs FPGA output
 
-I streamed the full test image through the RTL simulation, and ran the same image through the Python model separately."
+I streamed the full test image through the RTL simulation, and ran the same image through the Python model separately.
 
-The RTL's magnitude output was captured and reconstructed into a PNG using Python code(inside the ./fpga_io folder) for comparison. The two outputs match, confirming the hardware datapath produces results consistent with the software reference.
+The RTL's magnitude output was captured and reconstructed into a PNG using Python code (inside the ./fpga_io folder) for comparison. The two outputs match, confirming the hardware datapath produces results consistent with the software reference.
 
 | Python reference | FPGA output |
 |:---:|:---:|
