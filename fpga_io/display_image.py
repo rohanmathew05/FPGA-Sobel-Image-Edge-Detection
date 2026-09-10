@@ -8,7 +8,7 @@ OUTPUT_WIDTH = IMAGE_WIDTH - 2
 OUTPUT_HEIGHT = IMAGE_HEIGHT - 2
 
 # Read Sobel output
-with open("fpga_io/output/output.txt", "r") as f:
+with open("fpga_io/output/output_from_fpga.txt", "r") as f:
     values = [int(line.strip()) for line in f if line.strip()]
 
 print(f"Read {len(values)} output pixels")
