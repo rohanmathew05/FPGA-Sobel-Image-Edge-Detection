@@ -179,6 +179,8 @@ Open the Vivado project and add all the design and test files.
 
 The testbench reads `pixels.txt` and streams the pixels into `sobelTop`.
 
+Make sure the simulation runs for at least 600 µs (increase appropriately if you're uploading your own image). If it stops early, output.txt will be incomplete and the pixel comparison in step 5 will fail.
+
 The magnitude values from the simulation are written to the output file.
 
 ### 4. Rebuild the output image
