@@ -97,16 +97,6 @@ The 5x5 test produces 9 valid 3x3 windows. The resulting magnitudes can be seen 
 
 This test checks that the line buffers, shift registers, window generation and Sobel calculation work together correctly.
 
-### Synthesis results
-
-Synthesized for the Xilinx Artix-7 `xc7a100tcsg324-1`:
-
-| Resource | Usage |
-|----------|------:|
-| LUTs     | 3,427 |
-| FFs      | 9,774 |
-| BRAM     | 0 |
-| DSPs     | 0 |
 
 ## Results
 
@@ -143,7 +133,7 @@ The input interface accepts 1 pixel per clock, giving a theoretical input rate o
 
 ## Python reference vs FPGA output
 
-The full test image was streamed through the RTL simulation, and the same image was independently processed by a Python reference model implementing the same Sobel algorithm.
+I streamed the full test image through the RTL simulation, and ran the same image through the Python model separately."
 
 The RTL's magnitude output was captured and reconstructed into a PNG using Python code(inside the ./fpga_io folder) for comparison. The two outputs match, confirming the hardware datapath produces results consistent with the software reference.
 
