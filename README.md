@@ -189,6 +189,15 @@ This converts the RTL output back into a PNG.
 
 N.B. The image dimensions used by the Python scripts and the testbench need to match.
 
+### 5. Compare Pixel by Pixel
+
+```bash
+python test/compare_raw.py
+```
+
+This compares the raw pixel output of the python model vs the FPGA.
+
+
 ## Limitations / future work
 
 The current version is simulation-only. Some things I'd like to add are:
