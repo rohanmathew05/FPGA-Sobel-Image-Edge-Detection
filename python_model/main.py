@@ -52,7 +52,7 @@ def sobel_filter(image):
 
 def extract_image(file_path):
     image = Image.open(file_path).convert("L")
-    width = 400
+    width = 201
     height = int(image.height * (width / image.width))
     print(f"Width {width}")
     print(f"Height {height}")
@@ -62,7 +62,8 @@ def extract_image(file_path):
 
 
 def display_result(image):
-    image = np.array(image, dtype=np.uint8)
+    image = np.array(image, dtype=np.uint16)      # avoid overflow before clipping
+    image = np.clip(image, 0, 255).astype(np.uint8)
     Image.fromarray(image).save("python_model/output.png")
 
 

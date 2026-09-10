@@ -141,6 +141,15 @@ The input interface accepts 1 pixel per clock, giving a theoretical input rate o
 
 
 
+## Python reference vs FPGA output
+
+The full test image was streamed through the RTL simulation, and the same image was independently processed by a Python reference model implementing the same Sobel algorithm.
+
+The RTL's magnitude output was captured and reconstructed into a PNG using Python code(inside the ./fpga_io folder) for comparison. The two outputs match, confirming the hardware datapath produces results consistent with the software reference.
+
+| Python reference | FPGA output |
+|:---:|:---:|
+| <img src="python_model/output.png" width="320" alt="Python reference output"/> | <img src="fpga_io/sobel_output.png" width="320" alt="FPGA simulation output"/> |
 
 ## How to run it
 
