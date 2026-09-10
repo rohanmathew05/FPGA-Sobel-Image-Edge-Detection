@@ -193,39 +193,6 @@ This converts the RTL output back into a PNG.
 
 N.B. The image dimensions used by the Python scripts and the testbench need to match.
 
-## Results
-
-The current test image is resized to:
-
-```text
-Input:   201 x 251
-Output:  199 x 249
-```
-
-The output is smaller because the design only produces an output when a complete 3x3 window is available, so the outer one-pixel border is dropped.
-
-The input interface can accept:
-
-```
-1 pixel / clock
-```
-
-For example, at a 100 MHz clock this corresponds to a theoretical input rate of 100 million pixels/second, assuming the rest of the design can meet timing.
-
-The line-buffer storage is:
-
-```
-2 x IMAGE_WIDTH bytes
-```
-
-For the current 201-pixel-wide image this is only:
-
-```
-2 x 201 = 402 bytes
-```
-
-The amount of line-buffer storage depends on image width, not image height.
-
 ## Limitations / future work
 
 The current version is simulation-only. Some things I'd like to add are:
