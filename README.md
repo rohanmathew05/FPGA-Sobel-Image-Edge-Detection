@@ -151,6 +151,12 @@ The RTL's magnitude output was captured and reconstructed into a PNG using Pytho
 |:---:|:---:|
 | <img src="python_model/output.png" width="320" alt="Python reference output"/> | <img src="fpga_io/sobel_output.png" width="320" alt="FPGA simulation output"/> |
 
+### Pixel-by-pixel comparison (`test/compare_raw.py`)
+
+To verify the match numerically rather than by eye, I wrote test/compare_raw.py, which compares the RTL and Python outputs pixel-by-pixel. The full test image was streamed through the RTL simulation and also run through the Python model on its own. All 49,551 pixels matched exactly (100% match, mean absolute difference of 0), confirming the hardware datapath is bit-accurate against the reference model.
+
+![compare_raw.py results](images/test_results/compare_results.png)
+
 ## How to run it
 
 Install the Python dependencies:
