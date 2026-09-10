@@ -84,6 +84,8 @@ The first two testbenches use known input values and expected results to check t
 
 The sobel_tb.sv testbench checks the complete datapath using a small 5x5 image, while sobel_image_tb.sv is used to run the full image through the design and generate the output for reconstruction in Python.
 
+sobel_image_tb.sv outputs a .txt file, which Python uses to compare against the reference model pixel by pixel and to export the result as an image.
+
 ### Testbench Result - sobel_tb.sv
 
 The 5x5 test produces 9 valid 3x3 windows. The resulting magnitudes can be seen below:
